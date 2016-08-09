@@ -1,6 +1,7 @@
 package bimarian.com;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,6 +19,15 @@ public class TestUI {
         driver.quit();
     }
 
+
+    @Test
+    public void test01Chrome() throws Exception {
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.baidu.com/");
+        System.out.println("Chrome browser opened and navigated to baidu site" + driver.getTitle());
+        driver.quit();
+    }
 
     @Test
     public void test02Chrome() throws Exception {
