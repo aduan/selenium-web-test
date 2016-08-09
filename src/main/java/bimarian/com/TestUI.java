@@ -26,8 +26,8 @@ public class TestUI {
         WebDriver driver = new RemoteWebDriver(
                 new URL("http://10.20.100.185:4444/wd/hub"),
                 DesiredCapabilities.chrome());
-        driver.get("http://bimarian.com");
-        System.out.println("Chrome browser opened and navigated to Bimarian site");
+        driver.get("https://www.baidu.com/");
+        System.out.println("Chrome browser opened and navigated to baidu site" + driver.getTitle());
         driver.quit();
     }
 }
