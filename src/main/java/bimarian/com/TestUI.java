@@ -3,11 +3,7 @@ package bimarian.com;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
-
-import java.net.URL;
 
 public class TestUI {
 
@@ -24,18 +20,6 @@ public class TestUI {
     public void test01Chrome() throws Exception {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.baidu.com/");
-        System.out.println("Chrome browser opened and navigated to baidu site" + driver.getTitle());
-        driver.quit();
-    }
-
-    @Test
-    public void test02Chrome() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        //WebDriver driver = new ChromeDriver();
-        WebDriver driver = new RemoteWebDriver(
-                new URL("http://10.20.100.185:4444/wd/hub"),
-                DesiredCapabilities.chrome());
         driver.get("https://www.baidu.com/");
         System.out.println("Chrome browser opened and navigated to baidu site" + driver.getTitle());
         driver.quit();
